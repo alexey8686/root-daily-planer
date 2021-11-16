@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.5</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>org.example</groupId>
+  <artifactId>root-daily-planer</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>15</maven.compiler.source>
+    <maven.compiler.target>15</maven.compiler.target>
+    <spring-cloud.version>2020.0.4</spring-cloud.version>
+    <spring-boot-admin.version>2.4.3</spring-boot-admin.version>
+  </properties>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <artifactId>lombok</artifactId>
+        <groupId>org.projectlombok</groupId>
+        <version>1.18.22</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
+      <dependency>
+        <artifactId>mapstruct</artifactId>
+        <groupId>org.mapstruct</groupId>
+        <version>1.4.1.Final</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>daily-planner-dto</artifactId>
+        <groupId>com.bae.spb</groupId>
+        <version>1.0.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>de.codecentric</groupId>
+        <artifactId>spring-boot-admin-dependencies</artifactId>
+        <version>${spring-boot-admin.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+    </dependencies>
+
+  </dependencyManagement>
+
+
+
+  <profiles>
+    <profile>
+      <id>discovery-server</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          discovery-server
+        </module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>config-server</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          config-server
+        </module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>rest-service</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          daily-rest
+        </module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>dto</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          daily-planner-dto
+        </module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>task-service</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          daily-planner-task-service
+        </module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>mail-service</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          daily-planner-mail-service
+        </module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>admin-panel-service</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>
+          daily-planner-admin-service
+        </module>
+      </modules>
+    </profile>
+  </profiles>
+
+
+</project>

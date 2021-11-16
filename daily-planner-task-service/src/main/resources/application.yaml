@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: daily-planner-task-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+
+
+discovery:
+  server:
+    name: admin
+    password: psw

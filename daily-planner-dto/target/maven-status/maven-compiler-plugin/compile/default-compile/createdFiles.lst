@@ -1,0 +1,10 @@
+com\bae\spb\daily\planner\dto\RemindProcessException.class
+com\bae\spb\daily\planner\dto\StatusEnum.class
+com\bae\spb\daily\planner\dto\CommonResponse.class
+com\bae\spb\daily\planner\dto\MailSendingRequest.class
+com\bae\spb\daily\planner\dto\UserDto.class
+com\bae\spb\daily\planner\dto\TaskDto.class
+com\bae\spb\daily\planner\dto\TaskRequest.class
+com\bae\spb\daily\planner\dto\DataNotFoundException.class
+com\bae\spb\daily\planner\dto\TaskTypeDto.class
+com\bae\spb\daily\planner\dto\TaskResponse.class

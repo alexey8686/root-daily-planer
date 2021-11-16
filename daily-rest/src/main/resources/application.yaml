@@ -1,0 +1,18 @@
+spring:
+    application:
+        name: daily-planner-rest-client
+    data:
+        mongodb:
+            port: 27017
+            host: localhost
+    session:
+        store-type: mongodb
+
+logging:
+    level:
+        root: DEBUG
+
+discovery:
+    server:
+        name: admin
+        password: psw

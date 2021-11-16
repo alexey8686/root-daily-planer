@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: cloud-config-service
+
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/alexey8686/tacocloud-config
+                    search-paths:
+                        - '*service'
+
+
+
+
+server:
+    port: 8888
+logging:
+    level:
+        root: INFO
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: refresh
+

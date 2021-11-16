@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: admin-panel-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+
+discovery:
+  server:
+    name: admin
+    password: psw
