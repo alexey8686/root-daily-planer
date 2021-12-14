@@ -1,0 +1,19 @@
+server:
+  port: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${discovery.server.name}:${discovery.server.password}@localhost:8761/eureka/
+
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
